@@ -1,14 +1,14 @@
 import "dotenv/config";
-import { PrismaClient } from '../src/generated/prisma/client';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
 async function main() {
     console.log("Iniciando...");
 
-    await prisma.books.deleteMany();
+    await prisma.book.deleteMany();
 
-    await prisma.books.createMany({
+    await prisma.book.createMany({
         data: [
             {
                 title: "Dom Casmurro",
@@ -33,7 +33,7 @@ async function main() {
         ]
     });
 
-    const count = await prisma.books.count();
+    const count = await prisma.book.count();
     console.log(`Foram inseridos ${count} livros no banco de dados.`);
 }
 

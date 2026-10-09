@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:15.3-alpine
-    container_name: catalogo_livros_tarefa2
+    container_name: catalogo_livros_tarefa3
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
